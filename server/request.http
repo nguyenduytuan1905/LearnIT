@@ -1,0 +1,47 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "dumii",
+  "password": "dumii"
+}
+
+### 
+POST http://localhost:5000/api/auth/login 
+Content-Type: application/json
+
+{
+  "username": "duytuan",
+  "password": "duytuan"
+}
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNmMDNlN2FlMzhmNjBmMjg4MjJkNTQiLCJpYXQiOjE2MjY3MjMwMTJ9.gkZHBJ3e8zxXo0A9OkIdMr0C7FqMO1vZ4TJoiEsQdjk
+
+{ 
+  "title": "My love",
+  "description": "nice day",
+  "url": "javascript.com",
+  "status": "LEARNED"
+}
+
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNmMDNlN2FlMzhmNjBmMjg4MjJkNTQiLCJpYXQiOjE2MjY3MjMwMTJ9.gkZHBJ3e8zxXo0A9OkIdMr0C7FqMO1vZ4TJoiEsQdjk
+
+
+###
+PUT http://localhost:5000/api/posts/60e1e4ce705d8b2e9cc49c94
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNmMDNlN2FlMzhmNjBmMjg4MjJkNTQiLCJpYXQiOjE2MjY3MjMwMTJ9.gkZHBJ3e8zxXo0A9OkIdMr0C7FqMO1vZ4TJoiEsQdjk
+
+{
+   "title": "Vue",
+  "description": "VUEEEEE",
+  "url": "vuejs.org",
+  "status": "LEARNING"
+}
+### 
+DELETE http://localhost:5000/api/posts/60e1e2df85a07d34940908b5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGNmMDM4MmFlMzhmNjBmMjg4MjJkNTMiLCJpYXQiOjE2MjU0MTgwODl9.rhVGVS8UMj0qL3osev3u2di3iHN29FIQXLfgOqtTAvk
