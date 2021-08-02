@@ -18,7 +18,7 @@ const Auth = ({authRouter}) => {
   )
   else if (isAuthenticated) return <Redirect to='/dashboard' />
   else
-
+  
   body = (
     <>
 

@@ -1,13 +1,15 @@
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import AlertMessage from '../layout/AlertMessage'
+import { withRouter,useHistory } from 'react-router-dom'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 // Context
-const { loginUser } = useContext(AuthContext)
+const { loginUser,loadUser } = useContext(AuthContext)
+const history = useHistory()
 
 // Local state
 const [loginForm, setLoginForm] = useState({
@@ -30,7 +32,17 @@ const login = async event => {
 		if (!loginData.success) {
 			setAlert({ type: 'danger', message: loginData.message })
 			setTimeout(() => setAlert(null), 5000)
+
 		}
+    // history.push('/dashboard')
+		window.location.href = '/dashboard';
+		
+	
+		
+		
+		
+	
+	
 	} catch (error) {
 		console.log(error)
 	}
@@ -61,7 +73,7 @@ const login = async event => {
 						onChange={onChangeLoginForm}
 					/>
 				</Form.Group>
-				<Button variant='success' type='submit'>
+				<Button variant='success'  type='submit'>
 					Login
 				</Button>
 			</Form>
@@ -74,4 +86,4 @@ const login = async event => {
 	)
 }
 
-export default LoginForm
+export default  LoginForm
