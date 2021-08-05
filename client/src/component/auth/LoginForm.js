@@ -3,13 +3,12 @@ import Form from 'react-bootstrap/Form'
 import { Link} from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
-import AlertMessage from '../layout/AlertMessage'
-import { withRouter,useHistory } from 'react-router-dom'
+import AlertMessage from '../layout/AlertMessage';
 
 const LoginForm = (props) => {
 // Context
-const { loginUser,loadUser } = useContext(AuthContext)
-const history = useHistory()
+const { loginUser} = useContext(AuthContext)
+
 
 // Local state
 const [loginForm, setLoginForm] = useState({
@@ -37,11 +36,6 @@ const login = async event => {
     // history.push('/dashboard')
 		window.location.href = '/dashboard';
 		
-	
-		
-		
-		
-	
 	
 	} catch (error) {
 		console.log(error)
