@@ -37,6 +37,11 @@ const login = async event => {
 		window.location.href = '/dashboard';
 		
 	
+		
+		
+		
+	
+	
 	} catch (error) {
 		console.log(error)
 	}
